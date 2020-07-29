@@ -14,7 +14,7 @@ int main() {
 
 	sum = kor + eng + math;
 
-	cout << "\t\t\t\b\b\b=====< 성적표 >====="<<endl;
+	cout << "\n\t\t\t\b\b\b\b=====< 성적표 >====="<<endl;
 	cout << "============================================================"<<endl;
 	cout << right;
 	cout << setw(10) << "이름" << setw(10) << "국어" << setw(10) << "영어" << setw(10) << "수학" << setw(10) << "총점" << setw(10) << "평균" << endl;
