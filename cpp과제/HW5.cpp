@@ -25,10 +25,12 @@ int main() {
 		save(s, unit, cnt);
 	}
 	cout << "총 저금액 : " << total(s);
+	return 0;
 }
 
 void init(Savings& s) {
 	s.w500 = s.w100 = s.w50 = s.w10 = 0;
+	return;
 }
 void input(int& unit, int& cnt) {
 	cout << "동전의 금액 : ";
@@ -58,6 +60,7 @@ void save(Savings& s, int unit, int cnt) {
 	default:
 		break;
 	}
+	return;
 }
 int total(Savings& s) {
 	int tot = s.w500 * 500 + s.w100 * 100 + s.w50 * 50 + s.w10 * 10;
@@ -66,4 +69,5 @@ int total(Savings& s) {
 void myflush() {
 	cin.clear();
 	while (cin.get() != '\n') { ; }
+	return;
 }
