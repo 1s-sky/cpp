@@ -156,7 +156,14 @@
     <ClCompile Include="HW7.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="HW8.cpp" />
+    <ClCompile Include="HW8.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="HW9_Robot_testMain.cpp" />
+    <ClCompile Include="HW9_Robot.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Robot.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

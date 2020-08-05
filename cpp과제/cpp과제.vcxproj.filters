@@ -36,5 +36,16 @@
     <ClCompile Include="HW8.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="HW9_Robot.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="HW9_Robot_testMain.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Robot.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
