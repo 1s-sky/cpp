@@ -36,10 +36,10 @@
     <ClCompile Include="HW8.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="HW9_Robot.cpp">
+    <ClCompile Include="HW9.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="HW9_Robot_testMain.cpp">
+    <ClCompile Include="HW9_testMain.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

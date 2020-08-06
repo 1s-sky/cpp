@@ -82,11 +82,10 @@ char* Robot::getName()         // name멤버의 값 리턴
 }
 void Robot::setName(const char* name)   // name멤버의 값을 전달된 문자열로 재 초기화 (깊은복사)
 {
-	if (name != NULL) {
-		delete[] this->name;
-		this->name = new char[strlen(name) + 1];
-		strcpy(this->name, name);
-	}
+	delete[] this->name;
+	this->name = new char[strlen(name) + 1];
+	strcpy(this->name, name);
+	
 }
 int Robot::getEnergy()         // energy멤버의 값 리턴  
 {
@@ -96,4 +95,5 @@ void Robot::setEnergy(int energy) {
 	if (energy >= 0) {
 		this->energy = energy;
 	}
+	else this->energy = energy;
 }
