@@ -63,7 +63,7 @@ San San::operator=(const San& r)
 	delete[] this->name;
 	this->name = new char[strlen(r.name) + 1];
 	strcpy(this->name, r.name);
-	this->height = height;
+	this->height = r.height;
 	return *this;
 }
 
@@ -75,7 +75,7 @@ int main()
 	San b = a;
 
 	cout << b.getName() << " : " << b.getHeight() << "m" << endl;
-	cout << "새로운 산이름을 입력 하시오 : " << endl;
+	cout << "새로운 산이름을 입력 하시오 : ";
 	cin >> str;
 
 	b.setName(str);
@@ -87,7 +87,7 @@ int main()
 	San c;
 	c = a;
 		
-	cout << c.getName() << " : " << c.getHeight() << endl;
+	cout << c.getName() << " : " << c.getHeight() << "m" << endl;
 	
 	return 0;
 }
