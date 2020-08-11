@@ -52,6 +52,8 @@ int main()
 	}
 
 	//종료 시 모든 객체  free
+	for (int i = 0; i < memberCnt; i++)	{ delete fary[i]; }
+
 	return 0;
 }
 
