@@ -7,7 +7,6 @@ char* max(char*, char*);
 
 int main() {
 	double a, b;
-	int v;
 	char str1[100], str2[100];
 
 	cout << "두 실수 입력 : ";
