@@ -30,11 +30,13 @@ MyString& MyString::operator=(const MyString& br)
 	this->str = new char[strlen(br.str) + 1];
 	strcpy(this->str, br.str);
 }
-MyString& MyString::operator+(const MyString& br)
+MyString MyString::operator+(const MyString& br)
 {
 	MyString res;
 	int i = 0;
-	res.str = new char[this->len + br.len + 1];
+	res.len = this->len + br.len;
+	
+	res.str = new char[res.len + 1];
 	for (i = 0; i < this->len; i++)
 	{
 		res.str[i] = this->str[i];
@@ -43,6 +45,7 @@ MyString& MyString::operator+(const MyString& br)
 	{
 		res.str[j] = br.str[j];
 	}
+	return res;
 }
 bool MyString::operator>(const MyString& br)
 {

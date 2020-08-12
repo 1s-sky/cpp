@@ -13,6 +13,6 @@ public:
 	MyString(const MyString &br);
 	~MyString();
 	MyString& operator=(const MyString& br);
-	MyString& operator+(const MyString& br);
+	MyString operator+(const MyString& br);
 	bool operator>(const MyString& br);
 };
