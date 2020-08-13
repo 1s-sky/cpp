@@ -1,3 +1,4 @@
+#pragma warning (disable : 4996)
 #include <iostream>
 #include "MyString.h"
 using namespace std;
@@ -29,21 +30,23 @@ MyString& MyString::operator=(const MyString& br)
 	delete[] this->str;
 	this->str = new char[strlen(br.str) + 1];
 	strcpy(this->str, br.str);
+	this->len = br.len;
 }
 MyString MyString::operator+(const MyString& br)
 {
 	MyString res;
 	int i = 0;
+	int k = 0;
+
 	res.len = this->len + br.len;
-	
 	res.str = new char[res.len + 1];
 	for (i = 0; i < this->len; i++)
 	{
 		res.str[i] = this->str[i];
 	}
-	for (int j = i; j < this->len + br.len + 1; j++)
+	for (int j = i; j < res.len + 1; j++, k++)
 	{
-		res.str[j] = br.str[j];
+		res.str[j] = br.str[k];
 	}
 	return res;
 }

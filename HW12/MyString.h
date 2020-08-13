@@ -15,4 +15,6 @@ public:
 	MyString& operator=(const MyString& br);
 	MyString operator+(const MyString& br);
 	bool operator>(const MyString& br);
+	friend ostream& operator<<(ostream& os, MyString& br);
+	friend istream& operator>>(istream& os, MyString& br);
 };

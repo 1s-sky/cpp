@@ -1,5 +1,6 @@
 #include <iostream>
 #include "MyString.h"
+#pragma warning (disable : 4996)
 using namespace std;
 
 int main()
@@ -25,5 +26,22 @@ int main()
 	for (i = 0; i < 5; i++) {
 		cout << ary[i] << endl;
 	}
+
 	return 0;
+}
+
+ostream& operator<<(ostream& os, MyString& br)
+{
+	os << br.str << "(" << br.len << ")";
+	return os;
+}
+istream& operator>>(istream& is, MyString& br)
+{
+	char str[100];
+	if (br.str != NULL) { delete[] br.str; }
+	is >> str;
+	br.str = new char[strlen(str) + 1];
+	strcpy(br.str, str);
+	br.len = strlen(br.str);
+	return is;
 }
