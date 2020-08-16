@@ -7,12 +7,14 @@ Save::Save(const char* np, int n)
 {
 	strcpy(this->name, np);
 	this->capital = n;
-	this->profit = this->capital * ratio;
-	this->tax = this->profit * tax_ratio;
+	this->profit = 0;
+	this->tax = 0;
 	this->tot = 0;
 }
 void Save::calculate()
 {
+	this->profit = this->capital * ratio;
+	this->tax = this->profit * tax_ratio;
 	this->tot = this->capital + this->profit - this->tax;
 }
 ostream& operator<<(ostream& os, const Save& br)
