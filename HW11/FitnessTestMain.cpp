@@ -4,7 +4,7 @@
 using namespace std;
 
 int menu();
-void signIn(Fitness**, int&, int&);
+void signUp(Fitness**, int&, int&);
 void prn(Fitness**, int);
 void search(Fitness**, int);
 void withdraw(Fitness**, int&);
@@ -25,33 +25,33 @@ int main()
 		switch (menuNum)
 		{
 		case 1: 
-			cout << "/È¸¿øµî·Ï ¸Þ´ºÀÔ´Ï´Ù-----------------------------" << endl;
-			signIn(fary, memberCnt, memberNum); 
+			cout << "/íšŒì›ë“±ë¡ ë©”ë‰´ìž…ë‹ˆë‹¤-----------------------------" << endl;
+			signUp(fary, memberCnt, memberNum); 
 			break;
 		case 2: 
-			cout << "/È¸¿øÃâ·Â ¸Þ´ºÀÔ´Ï´Ù-----------------------------" << endl;
+			cout << "/íšŒì›ì¶œë ¥ ë©”ë‰´ìž…ë‹ˆë‹¤-----------------------------" << endl;
 			for (int i = 0; i < memberCnt; i++) {
 				prn(fary, i);
 			}
 			break;
 		case 3:
-			cout << "/È¸¿ø°Ë»ö ¸Þ´ºÀÔ´Ï´Ù-----------------------------" << endl; 
+			cout << "/íšŒì›ê²€ìƒ‰ ë©”ë‰´ìž…ë‹ˆë‹¤-----------------------------" << endl; 
 			search(fary, memberCnt); 
 			break;
 		case 4: 
 
-			cout << "/È¸¿øÅ»Åð ¸Þ´ºÀÔ´Ï´Ù-----------------------------" << endl; 
+			cout << "/íšŒì›íƒˆí‡´ ë©”ë‰´ìž…ë‹ˆë‹¤-----------------------------" << endl; 
 			withdraw(fary, memberCnt); 
 			break;
 		case 5: 
-			cout << "/Æ¯º°È¸¿ø ¸Þ´ºÀÔ´Ï´Ù-----------------------------" << endl; 
+			cout << "/íŠ¹ë³„íšŒì› ë©”ë‰´ìž…ë‹ˆë‹¤-----------------------------" << endl; 
 			special(fary, memberCnt); 
 			break;
 		}
 		cout << endl;
 	}
 
-	//Á¾·á ½Ã ¸ðµç °´Ã¼  free
+	//ì¢…ë£Œ ì‹œ ëª¨ë“  ê°ì²´  free
 	for (int i = 0; i < memberCnt; i++)	{ delete fary[i]; }
 
 	return 0;
@@ -60,28 +60,28 @@ int main()
 int menu()
 {
 	int menu;
-	cout << "* ¸Þ´º ¼±ÅÃ(1,È¸¿øµî·Ï / 2,È¸¿øÀüÃ¼º¸±â / 3,È¸¿øÁ¤º¸°Ë»ö / 4,È¸¿øÅ»Åð / 5,Æ¯º°°ü¸®È¸¿ø / 6,Á¾·á) : ";
+	cout << "* ë©”ë‰´ ì„ íƒ(1,íšŒì›ë“±ë¡ / 2,íšŒì›ì „ì²´ë³´ê¸° / 3,íšŒì›ì •ë³´ê²€ìƒ‰ / 4,íšŒì›íƒˆí‡´ / 5,íŠ¹ë³„ê´€ë¦¬íšŒì› / 6,ì¢…ë£Œ) : ";
 	cin >> menu;
 
 	while (menu < 1 || menu > 6)
 	{
-		cout << "* ¸Þ´º ¼±ÅÃ(1,È¸¿øµî·Ï / 2,È¸¿øÀüÃ¼º¸±â / 3,È¸¿øÁ¤º¸°Ë»ö / 4,È¸¿øÅ»Åð / 5,Æ¯º°°ü¸®È¸¿ø / 6,Á¾·á) : ";;
+		cout << "* ë©”ë‰´ ì„ íƒ(1,íšŒì›ë“±ë¡ / 2,íšŒì›ì „ì²´ë³´ê¸° / 3,íšŒì›ì •ë³´ê²€ìƒ‰ / 4,íšŒì›íƒˆí‡´ / 5,íŠ¹ë³„ê´€ë¦¬íšŒì› / 6,ì¢…ë£Œ) : ";;
 		cin >> menu;
 	}
 	return menu;
 }
 
-void signIn(Fitness** fary, int& memberCnt, int& memberNum) 
+void signUp(Fitness** fary, int& memberCnt, int& memberNum) 
 {
 	char name[100];
 	double weight;
 	double height;
 	
-	cout << "ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä : ";
+	cout << "ì´ë¦„ì„ ìž…ë ¥í•´ì£¼ì„¸ìš” : ";
 	cin >> name;
-	cout << "¸ö¹«°Ô¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä(kg) : ";
+	cout << "ëª¸ë¬´ê²Œë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”(kg) : ";
 	cin >> weight;
-	cout << "Å°¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä(cm) : ";
+	cout << "í‚¤ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”(cm) : ";
 	cin >> height;
 
 	fary[memberCnt] = new Fitness(memberNum, name, weight, height);
@@ -90,13 +90,13 @@ void signIn(Fitness** fary, int& memberCnt, int& memberNum)
 }
 void prn(Fitness** fary, int i)
 {
-	cout << "È¸¿ø¹øÈ£ : " << fary[i]->getNum() << " / È¸¿ø¸í : " << fary[i]->getName() 
-		<< " / ¸ö¹«°Ô : " << fary[i]->getWeight() << " / Å° : " << fary[i]->getHeight() << endl;	
+	cout << "íšŒì›ë²ˆí˜¸ : " << fary[i]->getNum() << " / íšŒì›ëª… : " << fary[i]->getName() 
+		<< " / ëª¸ë¬´ê²Œ : " << fary[i]->getWeight() << " / í‚¤ : " << fary[i]->getHeight() << endl;	
 }
 void search(Fitness** fary, int memberCnt)
 {
 	char name[100];
-	cout << "°Ë»öÇÒ ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä : ";
+	cout << "ê²€ìƒ‰í•  ì´ë¦„ì„ ìž…ë ¥í•˜ì„¸ìš” : ";
 	cin >> name;
 	for (int i = 0; i < memberCnt; i++)
 	{
@@ -109,7 +109,7 @@ void withdraw(Fitness** fary, int& memberCnt)
 {
 	int num;
 	int i;
-	cout << "Å»ÅðÇÒ È¸¿øÀÇ È¸¿ø¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä : ";
+	cout << "íƒˆí‡´í•  íšŒì›ì˜ íšŒì›ë²ˆí˜¸ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš” : ";
 	cin >> num;
 	for (i = 0; i < memberCnt; i++)
 	{
@@ -126,21 +126,21 @@ void withdraw(Fitness** fary, int& memberCnt)
 }
 void special(Fitness** fary, int memberCnt)
 {
-	cout << "<°íµµºñ¸¸>" << endl;
+	cout << "<ê³ ë„ë¹„ë§Œ>" << endl;
 	for (int i = 0; i < memberCnt; i++)
 	{
 		if (fary[i]->bmi() >= 40.0) {
 			prn(fary, i);
 		}
 	}
-	cout << "<ºñ¸¸>" << endl;
+	cout << "<ë¹„ë§Œ>" << endl;
 	for (int i = 0; i < memberCnt; i++)
 	{
 		if (fary[i]->bmi() < 40.0 && fary[i]->bmi() >= 30.0) {
 			prn(fary, i);
 		}
 	}
-	cout << "<°úÃ¼Áß>" << endl;
+	cout << "<ê³¼ì²´ì¤‘>" << endl;
 	for (int i = 0; i < memberCnt; i++)
 	{
 		if (fary[i]->bmi() < 30.0 && fary[i]->bmi() >= 25.0) {
